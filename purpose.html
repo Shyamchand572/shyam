@@ -1,0 +1,219 @@
+02.13 11:36 AM
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <style>
+
+        body {
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            height: 100vh;
+
+            margin: 0;
+
+            background-color: #ffe6e6;
+
+            font-family: Arial, sans-serif;
+
+        }
+
+        #message {
+
+            text-align: center;
+
+            margin-bottom: 20px;
+
+            font-size: 1.2em;
+
+            color: #333;
+
+        }
+
+        .buttons {
+
+            display: <!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <style>
+
+        body {
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            height: 100vh;
+
+            margin: 0;
+
+            background-color: #ffe6e6;
+
+            font-family: Arial, sans-serif;
+
+        }
+
+        #message {
+
+            text-align: center;
+
+            margin-bottom: 20px;
+
+            font-size: 1.2em;
+
+            color: #333;
+
+        }
+flex;
+
+            gap: 20px;
+
+        }
+
+        button {
+
+            padding: 10px 30px;
+
+            font-size: 1.1em;
+
+            border: none;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            transition: transform 0.3s;
+
+        }
+
+        #yesBtn {
+
+            background-color: #4CAF50;
+
+            color: white;
+
+        }
+
+        #noBtn {
+
+            background-color: #f44336;
+
+            color: white;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="message">DO you love me?<br>~~ আমি তোমাকে অনেক ভালোবাসি~~</div>
+
+    <div class="buttons">
+
+        <button id="yesBtn">Yes</button>
+
+        <button id="noBtn">No</button>
+
+    </div>
+
+    <script>
+
+        const message = document.getElementById('message');
+
+        const yesBtn = document.getElementById('yesBtn');
+
+        const noBtn = document.getElementById('noBtn');
+
+        let noCount = 0;
+
+        
+
+        const sadMessages = [
+
+            "বেবি মেনে নাও না প্লীজ",
+
+            "তুমি মিথ্যে কথা বলছো",
+          
+             " প্লীজ ম্যাডাম একসেপ্ট করুন ",
+          
+            " please man jao na ! ",
+          
+            " why are you ignore me ",
+          
+             " আবার ভাবো প্লীজ 🤔",
+          
+             "দয়া করে না বলীয় না ",
+
+            "আমি খুব দুঃখ পাচ্ছি এইবার ...",
+
+            "তুমি আমাকে এড়িয়ে যেও না "
+
+        ];
+
+        yesBtn.addEventListener('click', () => {
+
+            message.innerHTML = "I know it , i love you too madam jii 🥰 ❤️";
+
+            // Reset no button position if needed
+
+            noBtn.style.position = 'static';
+
+            noCount = 0;
+
+        });
+
+        noBtn.addEventListener('click', () => {
+
+            noCount++;
+
+            
+
+            if(noCount >= 1) {
+
+                // Move button randomly
+
+                noBtn.style.position = 'absolute';
+
+                noBtn.style.left = Math.random() * (window.innerWidth - 100) + 'px';
+
+                noBtn.style.top = Math.random() * (window.innerHeight - 50) + 'px';
+
+                
+
+                // Reset counter after some time
+
+                setTimeout(() => noCount = 0, 2000);
+
+            }
+
+            
+
+            // Change message text
+
+            message.textContent = sadMessages[Math.min(noCount-1, sadMessages.length-1)];
+
+        });
+
+    </script>
+
+</body>
+
+</html>
